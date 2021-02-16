@@ -1,9 +1,0 @@
-# in _config.yml
-title: "Data Science for Economics <br> DSE_MK 2021"
-author                      : Madina Kurmangaliyeva  # The author of the book
-copyright                   : "2021"  # Copyright year to be placed in the footer
-logo: images/logo.jpg
-only_build_toc_files: true
-execute:
-  execute_notebooks: "off"
-

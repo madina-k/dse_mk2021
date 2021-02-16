@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3.1.4. The math proof &#8212; Data Science for Economics &lt;br&gt; DSE_MK 2021</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="4. Video: The prediction routine (5 min)" href="video_the_prediction_routine.html" />
+    <link rel="prev" title="3.1.3. Answer to the prediction task" href="intro_to_prediction_sec3.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Data Science for Economics <br> DSE_MK 2021</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="landing-page.html">
+   INTRODUCTION
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Prediction models -- Week 1
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_vs_inference.html">
+   1. Video: Prediction vs. Inference (7 min)
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="quiz_prediction_inference.html">
+   2. Quiz: Prediction or Inference? (10 min)
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="quiz_prediction_inference_a1.html">
+     2.1.1. Answer 1 and Question 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="quiz_prediction_inference_a2.html">
+     2.1.2. Answer 2 and Question 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="quiz_prediction_inference_a2.html#question-3">
+     2.1.3. Question 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="quiz_prediction_inference_a3.html">
+     2.1.4. Answer 3
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="intro_to_prediction.html">
+   3. Simple example of how Prediction
+   <span class="math notranslate nohighlight">
+    \(\neq\)
+   </span>
+   Inference (10 min)
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="intro_to_prediction_sec1.html">
+     3.1.1. Answer to the estimation task
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="intro_to_prediction_sec2.html">
+     3.1.2. Predict height
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="intro_to_prediction_sec3.html">
+     3.1.3. Answer to the prediction task
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.1.4. The math proof
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="video_the_prediction_routine.html">
+   4. Video: The prediction routine (5 min)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="video_bias_variance.html">
+   5. Video: Bias-Variance trade-off (5 min)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial_ridge_and_lasso.html">
+   6. Tutorial: Ridge and Lasso
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="how_to_automate.html">
+   7. TIPS: How to automate your project? (5 min)
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Other
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Textbooks_and_papers.html">
+   1. Textbooks and papers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="statsvsml.html">
+   2. Statistics vs. Machine Learning?
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/intro_to_prediction_sec4.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="the-math-proof">
+<h1><span class="section-number">3.1.4. </span>The math proof<a class="headerlink" href="#the-math-proof" title="Permalink to this headline">¶</a></h1>
+<p>We assume the following data generating process:</p>
+<div class="math notranslate nohighlight">
+\[y_i = \mu + \epsilon_i\]</div>
+<p>We want to predict <span class="math notranslate nohighlight">\(y\)</span> by minimizing expected mean squared error of our prediction.</p>
+<p>Let’s make our predictor for <span class="math notranslate nohighlight">\(y_i\)</span> to be a function of the sample mean:</p>
+<div class="math notranslate nohighlight">
+\[\hat{y} = \alpha \bar{y} \]</div>
+<p>where <span class="math notranslate nohighlight">\(\bar{y} = \frac{1}{n}\sum_{i=1}^n y_i\)</span> and <span class="math notranslate nohighlight">\(n\)</span> is the sample size.</p>
+<p>We already know that to estimate <span class="math notranslate nohighlight">\(\mu\)</span>, we need <span class="math notranslate nohighlight">\(\alpha =1\)</span>, but to predict we need to minimize the mean squared prediction errors:</p>
+<div class="math notranslate nohighlight">
+\[\min_{\alpha} E(y_i - \alpha\bar{y})^2\]</div>
+<p>What should be our choice of <span class="math notranslate nohighlight">\(\alpha\)</span> to minimize the expression above?</p>
+<p>It appears that the optimal <span class="math notranslate nohighlight">\(alpha\)</span> is an expression that depends on the mean and the variance of the data-generating process, as well as the sample size:</p>
+<div class="math notranslate nohighlight">
+\[\alpha^\star = \frac{\mu^2}{\mu^2 + \frac{1}{n}var(\epsilon)} &lt; 1\]</div>
+<p>(see the proof below)</p>
+<p>The optimal <span class="math notranslate nohighlight">\(\alpha\)</span> is always lower than one. <strong>In other words, to get the prediction, we are shrinking the sample mean towards zero!</strong> (Even in this simple example without any covaritates at all. Amazing, isn’t it?)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that higher the variance of the observations (relative to the mean), the more we should shrink towards zero. Also, we shrink more if there are fewer observations, i.e., <span class="math notranslate nohighlight">\(n\)</span> is low.</p>
+</div>
+<p>With this simple example, we clearly see that the tools for prediction are not the same as for inference.</p>
+<p><strong>PROOF (for the most patient students):</strong></p>
+<div class="math notranslate nohighlight">
+\[E \left[\left(\alpha \bar{y} - y_i\right)^2\right] = \]</div>
+<div class="math notranslate nohighlight">
+\[ E \left[\alpha^2 \bar{y}^2 - 2\alpha \bar{y}y_i + y_i^2\right] =  \]</div>
+<div class="math notranslate nohighlight">
+\[ E \left[\alpha^2 \left(\mu + \frac{1}{n}\sum_{j=1}^n\epsilon_j\right)^2 - 2\alpha \left(\mu +  \frac{1}{n}\sum_{j=1}^n\epsilon_j\right)(\mu + \epsilon_i) + (\mu + \epsilon_i)^2\right] = \]</div>
+<div class="math notranslate nohighlight">
+\[ \alpha^2 \mu^2 + \alpha^2 \frac{1}{n} var(\epsilon) - 2\alpha \mu^2  + \mu^2 + var(\epsilon) \]</div>
+<p>Then take the derivative with respect to <span class="math notranslate nohighlight">\(\alpha\)</span> to find the one that minimizes the MSE.</p>
+<div class="math notranslate nohighlight">
+\[- 2\alpha \mu^2 + 2\mu^2 - 2\alpha \frac{1}{n} var(\epsilon) = 0 \Rightarrow \alpha^* = \frac{\mu^2}{\mu^2 + \frac{1}{n}var(\epsilon)}\]</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="intro_to_prediction_sec3.html" title="previous page"><span class="section-number">3.1.3. </span>Answer to the prediction task</a>
+    <a class='right-next' id="next-link" href="video_the_prediction_routine.html" title="next page"><span class="section-number">4. </span>Video: The prediction routine (5 min)</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Madina Kurmangaliyeva<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

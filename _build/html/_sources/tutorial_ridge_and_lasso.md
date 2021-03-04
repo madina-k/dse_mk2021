@@ -3,9 +3,9 @@
 There are two ways of running this tutorial:
 
 1. On your own computer (preferred).
-2. Experimentally, on the cloud at [https://madinak.shinyapps.io/tutorial_ridge_lasso/](https://madinak.shinyapps.io/tutorial_ridge_lasso/) , **available for a limited time each week**.
+2. Experimentally, on the cloud at [https://madinak.shinyapps.io/tutorial_ridge_lasso/](https://madinak.shinyapps.io/tutorial_ridge_lasso/) , **available for a limited time, until Friday evening March 12**.
 
-I __strongly recommend__ the first option, meaning that you download the tutorial from [https://github.com/madina-k/tutorial_ridge_lasso](https://github.com/madina-k/tutorial_ridge_lasso) and __run a local version__ of the tutorial on your own computer. 
+I __strongly recommend__ the first option, meaning that you download the tutorial from [https://github.com/madina-k/DSE2021_tutorials/tree/main/tutorial_ridge_lasso](https://github.com/madina-k/DSE2021_tutorials/tree/main/tutorial_ridge_lasso) and __run a local version__ of the tutorial on your own computer. 
 
 There are several reasons why running this tutorial locally is preferred:
 
@@ -20,7 +20,7 @@ There are several reasons why running this tutorial locally is preferred:
 
 If you already have those installed, perhaps you still want to [update your R and R Studio](https://uvastatlab.github.io/phdplus/installR.html) to the latest available version.
 
-**Step 1.** Pull the updated version of this git repository
+**Step 1.** Download this folder: [https://github.com/madina-k/DSE2021_tutorials/tree/main/tutorial_ridge_lasso](https://github.com/madina-k/DSE2021_tutorials/tree/main/tutorial_ridge_lasso)
 
 **Step 2.** Open R Studio and install the following packages for this week's tutorial:
 

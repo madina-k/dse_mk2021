@@ -1,6 +1,6 @@
 # In _toc.yml
 - file: landing-page
-  numbered: true
+  numbered: false
 - part: Prediction models -- Week 1
   chapters:
   - file: prediction_vs_inference
@@ -17,9 +17,37 @@
         - file: intro_to_prediction_sec4
   - file: video_the_prediction_routine
   - file: video_bias_variance
+  - file: video_cross_validation
   - file: tutorial_ridge_and_lasso
+  - file: ridge_and_lasso_in_python
   - file: how_to_automate
+  - file: zoom_lecture1
+- part: Prediction models -- Week 2
+  chapters:
+  - file: video_decision_trees
+  - file: video_classification_trees
+  - file: video_bagging_boosting
+  - file: tutorial_trees
+  - file: ensemble-tutorial
+  - file: ensemble-answers
+  - file: tips_shell
+  - file: zoom_lecture2
+- part: Inference models -- Week 3
+  chapters:
+  - file: tutorial_postlasso
+  - file: video_why_ml_fails
+  - file: video_double_selection
+  - file: video_double_ml
+  - file: tutorial_dml
+  - file: zoom_lecture3
+- part: Inference models -- Week 4
+  chapters:
+  - file: video_grf_intro
+  - file: video_causal_forest
+  - file: video_grf_main
+  - file: tutorial_grf
+  - file: zoom_lecture4
 - part: Other
   chapters:
   - file: Textbooks_and_papers
-  - file: statsvsml
+  # - file: statsvsml

@@ -3,7 +3,7 @@
 There are two ways of running this tutorial:
 
 1. On your own computer (preferred).
-2. Experimentally, on the cloud at [https://madinak.shinyapps.io/tutorial_postselection/](https://madinak.shinyapps.io/tutorial_postselection/) , **available for a limited time: until Friday evening, March 26**.
+2. Experimentally, on the cloud at [https://madinak.shinyapps.io/tutorial_postselection/](https://madinak.shinyapps.io/tutorial_postselection/) , **available for a limited time: from March 20 until Friday evening, March 26**.
 
 I __strongly recommend__ the first option, meaning that you download the tutorial from [https://github.com/madina-k/DSE2021_tutorials/tree/main/tutorial_postselection](https://github.com/madina-k/DSE2021_tutorials/tree/main/tutorial_postselection) and __run a local version__ of the tutorial on your own computer. 
 

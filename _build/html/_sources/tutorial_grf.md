@@ -3,7 +3,7 @@
 There are two ways of running this tutorial:
 
 1. On your own computer (preferred).
-2. Experimentally, on the cloud at [https://madinak.shinyapps.io/tutorial_grf/](https://madinak.shinyapps.io/tutorial_grf/) , **available for a limited time: until Friday evening, April 2**.
+2. Experimentally, on the cloud at [https://madinak.shinyapps.io/tutorial_grf/](https://madinak.shinyapps.io/tutorial_grf/) , **available for a limited time: from March 27 until Friday evening, April 2**.
 
 I __strongly recommend__ the first option, meaning that you download the tutorial from [https://github.com/madina-k/DSE2021_tutorials/tree/main/tutorial_grf](https://github.com/madina-k/DSE2021_tutorials/tree/main/tutorial_grf) and __run a local version__ of the tutorial on your own computer. 
 

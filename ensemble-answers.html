@@ -1,0 +1,870 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutorial: Tree-based and ensemble models in Python (ANSWERS) &#8212; Data Science for Economics &lt;br&gt; DSE_MK 2021</title>
+    
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Links: Unix shell" href="tips_shell.html" />
+    <link rel="prev" title="Tutorial: Tree-based and ensemble models in Python" href="ensemble-tutorial.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Data Science for Economics <br> DSE_MK 2021</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="landing-page.html">
+   INTRODUCTION
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Prediction models -- Week 1
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="prediction_vs_inference.html">
+   Video: Prediction vs. Inference
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="quiz_prediction_inference.html">
+   Quiz: Prediction or Inference?
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="quiz_prediction_inference_a1.html">
+     Answer 1 and Question 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="quiz_prediction_inference_a1.html#question-2">
+     Question 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="quiz_prediction_inference_a2.html">
+     Answer 2 and Question 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="quiz_prediction_inference_a2.html#question-3">
+     Question 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="quiz_prediction_inference_a3.html">
+     Answer 3
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="intro_to_prediction.html">
+   Simple example of how Prediction
+   <span class="math notranslate nohighlight">
+    \(\neq\)
+   </span>
+   Inference
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="intro_to_prediction_sec1.html">
+     Answer to the estimation task
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="intro_to_prediction_sec2.html">
+     Predict height
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="intro_to_prediction_sec3.html">
+     Answer to the prediction task
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="intro_to_prediction_sec4.html">
+     The math proof
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="video_the_prediction_routine.html">
+   Video: The prediction routine
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="video_bias_variance.html">
+   Video: Bias-Variance trade-off
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="video_cross_validation.html">
+   Video: Test vs Cross-Validation MSE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial_ridge_and_lasso.html">
+   Tutorial: Ridge and Lasso
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ridge_and_lasso_in_python.html">
+   Links: Ridge and Lasso in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="how_to_automate.html">
+   TIPS: How to automate your project?
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="zoom_lecture1.html">
+   Zoom-lecture: March 12, 10:45
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Prediction models -- Week 2
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="video_decision_trees.html">
+   Video: Decision trees
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="video_classification_trees.html">
+   Video: Pruning technique, Classification trees
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="video_bagging_boosting.html">
+   Video: Bagging, Random Forest, Boosting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial_trees.html">
+   Tutorial: Tree-based methods
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ensemble-tutorial.html">
+   Tutorial: Tree-based and ensemble models in Python
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Tutorial: Tree-based and ensemble models in Python (ANSWERS)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tips_shell.html">
+   Links: Unix shell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="zoom_lecture2.html">
+   Zoom-lecture: March 19, 10:45
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Inference models -- Week 3
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial_postlasso.html">
+   Tutorial: Post-lasso and Post-double-selection inference
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="video_why_ml_fails.html">
+   Video: Why ML fails for inference (recap)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="video_double_selection.html">
+   Video: Double selection
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="video_double_ml.html">
+   Video: Double Machine Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial_dml.html">
+   Tutorial: Double Machine Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="zoom_lecture3.html">
+   Zoom-lecture: March 26, 10:45
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Inference models -- Week 4
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="video_grf_intro.html">
+   Video: GRF (intro)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="video_causal_forest.html">
+   Video: Causal Trees
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="video_grf_main.html">
+   Video: GRF random effects model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tutorial_grf.html">
+   Tutorial: Generalized Random Forest
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="zoom_lecture4.html">
+   Zoom-lecture: April 1, 10:45
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Other
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Textbooks_and_papers.html">
+   Textbooks and papers
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/ensemble-answers.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/ensemble-answers.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-data-and-split-it-in-train-and-test-sets">
+   Load data and split it in train and test sets
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decision-tree">
+   Decision Tree
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bagging">
+   Bagging
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-forest">
+   Random Forest
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boosting-with-gradient-boosting">
+   Boosting with Gradient Boosting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#voting-classifier">
+   Voting classifier
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="tutorial-tree-based-and-ensemble-models-in-python-answers">
+<h1>Tutorial: Tree-based and ensemble models in Python (ANSWERS)<a class="headerlink" href="#tutorial-tree-based-and-ensemble-models-in-python-answers" title="Permalink to this headline">¶</a></h1>
+<p>This is not a standalone tutorial, as most of the theory and important questions are asked in the main tutorial in R. The second tutorial serves the purpose of helping you make your own tree-based and enseble models in Python.  I expect that you have already covered the video lectures and the main tutorial in R by now. So I assume that you already know what you are doing, you just don’t know how to code it in Python yet. If R tutorial provides more assistance in digesting the material, this tutorial in Python pushes you to be more independent, with minimum hints. (I used these notebooks to prepare this tutorial: <a class="reference external" href="https://github.com/ageron/handson-ml2/blob/master/06_decision_trees.ipynb">1</a>, <a class="reference external" href="https://github.com/ageron/handson-ml2/blob/master/07_ensemble_learning_and_random_forests.ipynb">2</a> <a class="reference external" href="https://nbviewer.jupyter.org/github/JWarmenhoven/ISL-python/blob/master/Notebooks/Chapter%208.ipynb#8.3.4-Boosting">3</a>)</p>
+<p>We keep on working with the same COMPAS dataset, and we will use <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> library.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the usual libraries</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">sklearn</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="load-data-and-split-it-in-train-and-test-sets">
+<h2>Load data and split it in train and test sets<a class="headerlink" href="#load-data-and-split-it-in-train-and-test-sets" title="Permalink to this headline">¶</a></h2>
+<p>Let’s load the sample of COMPAS data we used in the previous tutorial. For your convenience, I already transformed all factor variables into dummy variables using <code class="docutils literal notranslate"><span class="pre">model.matrix()</span></code> function in R and saved it on github as a csv file. So you can directly access the data using the link below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_location</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/madina-k/DSE2021_tutorials/main/tutorial_trees/data/compas_sample500matrix.csv&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_location</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Two_yr_Recidivismyes</th>
+      <th>Number_of_Priors</th>
+      <th>Age_Above_FourtyFiveyes</th>
+      <th>Age_Below_TwentyFiveyes</th>
+      <th>FemaleMale</th>
+      <th>Misdemeanoryes</th>
+      <th>ethnicityCaucasian</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>-0.012530</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>-0.400115</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>0.701857</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0</td>
+      <td>-0.930922</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>-0.545324</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">train_test_split</span></code> command from <code class="docutils literal notranslate"><span class="pre">sklearn.model_selection</span></code> to split the data into four objects: <code class="docutils literal notranslate"><span class="pre">X_train,</span> <span class="pre">X_test,</span> <span class="pre">y_train,</span> <span class="pre">y_test</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;Two_yr_Recidivismyes&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="decision-tree">
+<h2>Decision Tree<a class="headerlink" href="#decision-tree" title="Permalink to this headline">¶</a></h2>
+<p>Train a decision tree using <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code> class from <code class="docutils literal notranslate"><span class="pre">sklearn.tree</span></code>. Look at the documentation <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html">here</a> and fit a decision tree using Gini node impurity measure, with minimum 25 observations in each leaf, and the maximum tree depth of 3.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+
+<span class="n">tree_clf</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">min_samples_leaf</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">tree_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeClassifier(class_weight=None, criterion=&#39;gini&#39;, max_depth=4,
+                       max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=25, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort=False,
+                       random_state=None, splitter=&#39;best&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>And visualize the resulting tree using <code class="docutils literal notranslate"><span class="pre">plot_tree</span></code> from <code class="docutils literal notranslate"><span class="pre">sklearn.tree</span></code>.  See documentation <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.plot_tree.html">here</a>. Don’t forget to tell the names of the features and class names, set the font size to 14.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">plot_tree</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">18</span><span class="p">))</span>  <span class="c1"># set plot size (denoted in inches)</span>
+<span class="n">plot_tree</span><span class="p">(</span><span class="n">tree_clf</span><span class="p">,</span> <span class="n">feature_names</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">class_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;No&#39;</span><span class="p">,</span> <span class="s1">&#39;Yes&#39;</span><span class="p">],</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span> <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ensemble-answers_9_0.png" src="_images/ensemble-answers_9_0.png" />
+</div>
+</div>
+<p>This is some bushy tree but we do not have a way to prune it in an automated way with sklearn. If you really want to prune this tree, look how it can be done in this <a class="reference external" href="https://ranvir.xyz/blog/practical-approach-to-tree-pruning-using-sklearn/">blog</a>.</p>
+<p>Finally, let’s check it’s out-of-sample accuracy with <code class="docutils literal notranslate"><span class="pre">accuracy_score</span></code> function from <code class="docutils literal notranslate"><span class="pre">sklearn.metrics</span></code>. Read the documentation <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+
+<span class="n">y_pred_tree</span> <span class="o">=</span> <span class="n">tree_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_tree</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.728
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="bagging">
+<h2>Bagging<a class="headerlink" href="#bagging" title="Permalink to this headline">¶</a></h2>
+<p>Now it’s time for some bagging! Use <code class="docutils literal notranslate"><span class="pre">BaggingClassifier</span></code> from <code class="docutils literal notranslate"><span class="pre">sklearn.ensemble</span></code>. See documentation <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.BaggingClassifier.html">here</a>.
+Create a new tree object which allows to grow a tree of maximum depth of 2 and put that classifier inside the <code class="docutils literal notranslate"><span class="pre">BaggingClassifier</span></code>. Ask to bag over 500 trees with maximum samples of 100 observations with bootstrapping.  Print the accuracy score.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">BaggingClassifier</span>
+
+<span class="n">tree_clf_forbagging</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">bag_clf</span> <span class="o">=</span> <span class="n">BaggingClassifier</span><span class="p">(</span>
+    <span class="n">tree_clf_forbagging</span><span class="p">,</span> <span class="n">n_estimators</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+    <span class="n">max_samples</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">bootstrap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">bag_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_pred_bag</span> <span class="o">=</span> <span class="n">bag_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_bag</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.72
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="random-forest">
+<h2>Random Forest<a class="headerlink" href="#random-forest" title="Permalink to this headline">¶</a></h2>
+<p>Now, let’s use <code class="docutils literal notranslate"><span class="pre">RandomForestClassifier</span></code> from <code class="docutils literal notranslate"><span class="pre">sklearn.ensemble</span></code>. See documentation <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html">here</a>. Create a random forest of 500 trees, where each tree has a maximum depth of 2. Print the accuracy score for the test sample.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+
+<span class="n">rf_clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">rf_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">y_pred_rf</span> <span class="o">=</span> <span class="n">rf_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_rf</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.696
+</pre></div>
+</div>
+</div>
+</div>
+<p>Check for the importance of each feature, using <code class="docutils literal notranslate"><span class="pre">feature_importances_</span></code> property of the classifier. (For example, see this <a class="reference external" href="https://scikit-learn.org/stable/auto_examples/ensemble/plot_forest_importances.html">page</a>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">score</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="n">rnd_clf</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">score</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number_of_Priors 0.5951675288832771
+Age_Above_FourtyFiveyes 0.15327959016558776
+Age_Below_TwentyFiveyes 0.04963856624481278
+FemaleMale 0.06136793924146804
+Misdemeanoryes 0.07341448602922451
+ethnicityCaucasian 0.06713188943562985
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="boosting-with-gradient-boosting">
+<h2>Boosting with Gradient Boosting<a class="headerlink" href="#boosting-with-gradient-boosting" title="Permalink to this headline">¶</a></h2>
+<p>There are several different ways to boost trees (e.g., XGBoost library or AdaBoostClaasifier from sklearn). In this tutorial, I would ask you to train a <code class="docutils literal notranslate"><span class="pre">GradientBoostingClassifier</span></code> from <code class="docutils literal notranslate"><span class="pre">sklearn.ensemble</span></code>. See the documentation <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html">here</a>. Make 300 trees with the maximum depth of 2. Set learning rate at 0.01.</p>
+<p>Then use the <code class="docutils literal notranslate"><span class="pre">staged_predict</span></code> method to predict the target variable at each stage of boosting (1 tree only, 2 trees together, 3 trees, and so on) using the test X. Get the mean squared error using the <code class="docutils literal notranslate"><span class="pre">mean_squared_error</span></code> wrapper from <code class="docutils literal notranslate"><span class="pre">sklearn.ensemble</span></code>. See the documentation <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.metrics.mean_squared_error.html">here</a>. And find the number of trees that minimize the MSE on the test sample.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">GradientBoostingClassifier</span>
+
+<span class="n">gbc_clf</span> <span class="o">=</span> <span class="n">GradientBoostingClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_estimators</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">gbc_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">errors</span> <span class="o">=</span> <span class="p">[</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+          <span class="k">for</span> <span class="n">y_pred</span> <span class="ow">in</span> <span class="n">gbc_clf</span><span class="o">.</span><span class="n">staged_predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)]</span>
+
+<span class="n">min_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">min_error</span><span class="p">)</span>
+
+
+<span class="n">optimal_n_trees</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">errors</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">optimal_n_trees</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.304
+26
+</pre></div>
+</div>
+</div>
+</div>
+<p>Train the Gradient boosting classifier model with the <strong>optimal number of trees</strong> and and get the accuracy score.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gbc_best</span> <span class="o">=</span> <span class="n">GradientBoostingClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_estimators</span><span class="o">=</span><span class="n">optimal_n_trees</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">gbc_best</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+
+
+<span class="n">y_pred_gbcbest</span> <span class="o">=</span> <span class="n">gbc_best</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_gbrtbest</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.696
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="voting-classifier">
+<h2>Voting classifier<a class="headerlink" href="#voting-classifier" title="Permalink to this headline">¶</a></h2>
+<p>Finally we will try to combine all the other models under one Ensemble model.</p>
+<p>Import <code class="docutils literal notranslate"><span class="pre">VotingClassifier</span></code> from <code class="docutils literal notranslate"><span class="pre">sklearn.ensemble</span></code>.</p>
+<p>We will also import Logistic Regression and Support Vector Machine.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">VotingClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+
+<span class="n">log_clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s1">&#39;lbfgs&#39;</span><span class="p">)</span>
+<span class="n">svm_clf</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">probability</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="s1">&#39;scale&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now put all different classifiers to be combined within the voting classifier and compare accuracy scores across different classifiers:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">voting_clf</span> <span class="o">=</span> <span class="n">VotingClassifier</span><span class="p">(</span>
+    <span class="n">estimators</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;lr&#39;</span><span class="p">,</span> <span class="n">log_clf</span><span class="p">),</span> <span class="c1"># Logistic classifier</span>
+                  <span class="p">(</span><span class="s1">&#39;rf&#39;</span><span class="p">,</span> <span class="n">rf_clf</span><span class="p">),</span>  <span class="c1"># Random forest classifier</span>
+                  <span class="p">(</span><span class="s1">&#39;svm&#39;</span><span class="p">,</span> <span class="n">svm_clf</span><span class="p">),</span> <span class="c1"># SVM classifier</span>
+                  <span class="p">(</span><span class="s1">&#39;bag&#39;</span><span class="p">,</span> <span class="n">bag_clf</span><span class="p">),</span> <span class="c1"># Bagging classifier</span>
+                  <span class="p">(</span><span class="s1">&#39;gbrt&#39;</span><span class="p">,</span> <span class="n">gbc_best</span><span class="p">)],</span>  <span class="c1"># Boosting classifier</span>
+    <span class="n">voting</span> <span class="o">=</span><span class="s1">&#39;hard&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">clf</span> <span class="ow">in</span> <span class="p">(</span><span class="n">tree_clf</span><span class="p">,</span><span class="n">log_clf</span><span class="p">,</span> <span class="n">rf_clf</span><span class="p">,</span> <span class="n">svm_clf</span><span class="p">,</span> <span class="n">bag_clf</span><span class="p">,</span> <span class="n">gbc_best</span><span class="p">,</span> <span class="n">voting_clf</span><span class="p">):</span>
+    <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeClassifier 0.624
+LogisticRegression 0.656
+RandomForestClassifier 0.696
+SVC 0.688
+BaggingClassifier 0.728
+GradientBoostingClassifier 0.696
+VotingClassifier 0.72
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="ensemble-tutorial.html" title="previous page">Tutorial: Tree-based and ensemble models in Python</a>
+    <a class='right-next' id="next-link" href="tips_shell.html" title="next page">Links: Unix shell</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Madina Kurmangaliyeva<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

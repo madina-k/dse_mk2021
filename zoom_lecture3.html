@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Answer to the prediction task &#8212; Data Science for Economics &lt;br&gt; DSE_MK 2021</title>
+    <title>Zoom-lecture: March 26, 10:45 &#8212; Data Science for Economics &lt;br&gt; DSE_MK 2021</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -56,8 +56,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="The math proof" href="intro_to_prediction_sec4.html" />
-    <link rel="prev" title="Predict height" href="intro_to_prediction_sec2.html" />
+    <link rel="next" title="Video: GRF (intro)" href="video_grf_intro.html" />
+    <link rel="prev" title="Tutorial: Double Machine Learning" href="tutorial_dml.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -99,7 +99,7 @@
   Prediction models -- Week 1
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="prediction_vs_inference.html">
    Video: Prediction vs. Inference
@@ -139,7 +139,7 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="intro_to_prediction.html">
    Simple example of how Prediction
    <span class="math notranslate nohighlight">
@@ -147,7 +147,7 @@
    </span>
    Inference
   </a>
-  <ul class="current collapse-ul">
+  <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="intro_to_prediction_sec1.html">
      Answer to the estimation task
@@ -158,8 +158,8 @@
      Predict height
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="intro_to_prediction_sec3.html">
      Answer to the prediction task
     </a>
    </li>
@@ -260,7 +260,7 @@
   Inference models -- Week 3
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="tutorial_postlasso.html">
    Tutorial: Post-lasso and Post-double-selection inference
@@ -286,8 +286,8 @@
    Tutorial: Double Machine Learning
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="zoom_lecture3.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Zoom-lecture: March 26, 10:45
   </a>
  </li>
@@ -375,7 +375,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro_to_prediction_sec3.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/zoom_lecture3.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -400,6 +400,25 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#agenda">
+   Agenda:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zoom-link">
+   Zoom link
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -407,19 +426,24 @@
         
               <div>
                 
-  <div class="section" id="answer-to-the-prediction-task">
-<h1>Answer to the prediction task<a class="headerlink" href="#answer-to-the-prediction-task" title="Permalink to this headline">¶</a></h1>
-<p>The best prediction is actually <strong>169.6 cm</strong>.</p>
-<p>Funny, but the sample average is NOT the best prediction!</p>
-<p><br/><br/></p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/butwhy.jpg"><img alt="measure height" class="bg-primary mb-1 align-center" src="_images/butwhy.jpg" style="width: 300px;" /></a>
-<p><br/><br/></p>
-<p>Why? Why not larger than 170cm? Why not exactly 170 cm?</p>
-<p>I am glad you asked!</p>
-<p>It appears that <strong>shrinking the prediction toward zero</strong> and away from the observed mean is <strong>always</strong> optimal. By how much it is optimal to shrink, actually,  depends on the mean and variance of the data-generating process and on the sample size.</p>
-<p>See the mathematical proof in the next section.</p>
-<p>Or if you still do not believe me, check out this R code that simulates this inference vs. prediction problem and produces the following graph that visually shows that MSE are indeed minimized not when <span class="math notranslate nohighlight">\(\alpha\)</span> equals one, but when it is smaller.</p>
-<p><img alt="bias vs MSE at different alphas" src="_images/simulation_pred_vs_inference.png" /></p>
+  <div class="section" id="zoom-lecture-march-26-10-45">
+<h1>Zoom-lecture: March 26, 10:45<a class="headerlink" href="#zoom-lecture-march-26-10-45" title="Permalink to this headline">¶</a></h1>
+<p>Please, send me your questions regarding this week’s material by Thursday 1pm.</p>
+<div class="section" id="agenda">
+<h2>Agenda:<a class="headerlink" href="#agenda" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Q&amp;A session (10:45)</p></li>
+<li><p>Invited speaker <a class="reference external" href="https://clemensfiedler.com/">Dr Clemens Fiedler</a> (11:00)</p></li>
+<li><p>Break (11:30)</p></li>
+<li><p>Functional form selection for causal inference (11:45)</p></li>
+</ol>
+</div>
+<div class="section" id="zoom-link">
+<h2>Zoom link<a class="headerlink" href="#zoom-link" title="Permalink to this headline">¶</a></h2>
+<p>Due to security reasons, I am not publishing here the full credentials to the zoom meeting. Only the zoom link with the room ID, but not the password. The password was sent via canvas to your email.</p>
+<p>Join Zoom Meeting
+<a class="reference external" href="https://tilburguniversity.zoom.us/j/99533167048">https://tilburguniversity.zoom.us/j/99533167048</a></p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -450,8 +474,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="intro_to_prediction_sec2.html" title="previous page">Predict height</a>
-    <a class='right-next' id="next-link" href="intro_to_prediction_sec4.html" title="next page">The math proof</a>
+    <a class='left-prev' id="prev-link" href="tutorial_dml.html" title="previous page">Tutorial: Double Machine Learning</a>
+    <a class='right-next' id="next-link" href="video_grf_intro.html" title="next page">Video: GRF (intro)</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

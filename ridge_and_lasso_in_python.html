@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Answer to the prediction task &#8212; Data Science for Economics &lt;br&gt; DSE_MK 2021</title>
+    <title>Links: Ridge and Lasso in Python &#8212; Data Science for Economics &lt;br&gt; DSE_MK 2021</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -56,8 +56,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="The math proof" href="intro_to_prediction_sec4.html" />
-    <link rel="prev" title="Predict height" href="intro_to_prediction_sec2.html" />
+    <link rel="next" title="TIPS: How to automate your project?" href="how_to_automate.html" />
+    <link rel="prev" title="Tutorial: Ridge and Lasso" href="tutorial_ridge_and_lasso.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -139,7 +139,7 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="intro_to_prediction.html">
    Simple example of how Prediction
    <span class="math notranslate nohighlight">
@@ -147,7 +147,7 @@
    </span>
    Inference
   </a>
-  <ul class="current collapse-ul">
+  <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="intro_to_prediction_sec1.html">
      Answer to the estimation task
@@ -158,8 +158,8 @@
      Predict height
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="intro_to_prediction_sec3.html">
      Answer to the prediction task
     </a>
    </li>
@@ -192,8 +192,8 @@
    Tutorial: Ridge and Lasso
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ridge_and_lasso_in_python.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Links: Ridge and Lasso in Python
   </a>
  </li>
@@ -375,7 +375,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro_to_prediction_sec3.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/ridge_and_lasso_in_python.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -407,19 +407,10 @@
         
               <div>
                 
-  <div class="section" id="answer-to-the-prediction-task">
-<h1>Answer to the prediction task<a class="headerlink" href="#answer-to-the-prediction-task" title="Permalink to this headline">¶</a></h1>
-<p>The best prediction is actually <strong>169.6 cm</strong>.</p>
-<p>Funny, but the sample average is NOT the best prediction!</p>
-<p><br/><br/></p>
-<a class="bg-primary mb-1 reference internal image-reference" href="_images/butwhy.jpg"><img alt="measure height" class="bg-primary mb-1 align-center" src="_images/butwhy.jpg" style="width: 300px;" /></a>
-<p><br/><br/></p>
-<p>Why? Why not larger than 170cm? Why not exactly 170 cm?</p>
-<p>I am glad you asked!</p>
-<p>It appears that <strong>shrinking the prediction toward zero</strong> and away from the observed mean is <strong>always</strong> optimal. By how much it is optimal to shrink, actually,  depends on the mean and variance of the data-generating process and on the sample size.</p>
-<p>See the mathematical proof in the next section.</p>
-<p>Or if you still do not believe me, check out this R code that simulates this inference vs. prediction problem and produces the following graph that visually shows that MSE are indeed minimized not when <span class="math notranslate nohighlight">\(\alpha\)</span> equals one, but when it is smaller.</p>
-<p><img alt="bias vs MSE at different alphas" src="_images/simulation_pred_vs_inference.png" /></p>
+  <div class="section" id="links-ridge-and-lasso-in-python">
+<h1>Links: Ridge and Lasso in Python<a class="headerlink" href="#links-ridge-and-lasso-in-python" title="Permalink to this headline">¶</a></h1>
+<p>Please, see <a class="reference external" href="https://github.com/JWarmenhoven/ISLR-python/blob/master/Notebooks/Chapter%206.ipynb">this notebook</a> by Jordi Warmenhoven who translated the tutorial from Chapter 6 of the ISLR textbook into python code. The same tutorial on which I based this week’s tutorial.</p>
+<p>If you want to have more exercises in Python with the scikit learn library, I recommend <a class="reference external" href="https://campus.datacamp.com/courses/supervised-learning-with-scikit-learn/regression-2?ex=1">Chapter 2 on linear models</a> in the datacamp course on supervised machine learning.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -450,8 +441,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="intro_to_prediction_sec2.html" title="previous page">Predict height</a>
-    <a class='right-next' id="next-link" href="intro_to_prediction_sec4.html" title="next page">The math proof</a>
+    <a class='left-prev' id="prev-link" href="tutorial_ridge_and_lasso.html" title="previous page">Tutorial: Ridge and Lasso</a>
+    <a class='right-next' id="next-link" href="how_to_automate.html" title="next page">TIPS: How to automate your project?</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

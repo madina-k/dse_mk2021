@@ -25,6 +25,6 @@ It appears that __shrinking the prediction toward zero__ and away from the obser
 
 See the mathematical proof in the next section.
 
-Or if you still do not believe me, check out this R code that simulates this inference vs. prediction problem and produces the following graph that visually shows that MSE are indeed minimized not when $\alpha$ equals one, but when it is smaller.
+Or if you still do not believe me, check out [this R code](https://github.com/madina-k/DSE2021_tutorials/blob/main/simulations/simulation_prediction_vs_estimation.R) that simulates this inference vs. prediction problem and produces the following graph that visually shows that MSE are indeed minimized not when $\alpha$ equals one, but when it is smaller.
 
 ![bias vs MSE at different alphas](images/simulation_pred_vs_inference.png)

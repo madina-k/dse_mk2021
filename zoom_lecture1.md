@@ -18,4 +18,4 @@ Join Zoom Meeting
 
 ## Link to the slides
 
-[Slides](https://www.dropbox.com/s/nzwz34t9hzf2zcm/DSE_p2_zoom_week1.pdf?dl=0)
+[Link to the slides](https://www.dropbox.com/s/nzwz34t9hzf2zcm/DSE_p2_zoom_week1.pdf?dl=0)

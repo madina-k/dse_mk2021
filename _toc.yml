@@ -30,6 +30,7 @@
   - file: tutorial_trees
   - file: ensemble-tutorial
   - file: ensemble-answers
+  - file: tips_sublime_project
   - file: tips_shell
   - file: zoom_lecture2
 - part: Inference models -- Week 3

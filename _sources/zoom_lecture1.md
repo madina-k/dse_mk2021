@@ -16,4 +16,6 @@ Due to security reasons, I am not publishing here the full credentials to the zo
 Join Zoom Meeting
 [https://tilburguniversity.zoom.us/j/99533167048](https://tilburguniversity.zoom.us/j/99533167048)
 
+## Link to the slides
 
+[Link to the slides](https://www.dropbox.com/s/nzwz34t9hzf2zcm/DSE_p2_zoom_week1.pdf?dl=0)

@@ -31,7 +31,7 @@
   - file: ensemble-tutorial
   - file: ensemble-answers
   - file: tips_sublime_project
-  - file: tips_shell
+  - file: links_shell
   - file: zoom_lecture2
 - part: Inference models -- Week 3
   chapters:
@@ -40,6 +40,7 @@
   - file: video_double_selection
   - file: video_double_ml
   - file: tutorial_dml
+  - file: links_sql
   - file: zoom_lecture3
 - part: Inference models -- Week 4
   chapters:

@@ -10,7 +10,7 @@ I __strongly recommend__ the first option, meaning that you download the tutoria
 
 ## How to run an interactive tutorial locally from your computer
 
-**Step 1.** Open [this folder](https://github.com/madina-k/DSE2021_tutorials/tree/main/tutorial_grf) by forking or downloading the whole repository with all the tutorial [https://github.com/madina-k/DSE2021_tutorials](https://github.com/madina-k/DSE2021_tutorials)
+**Step 1.** Open [this folder](https://github.com/madina-k/DSE2021_tutorials/tree/main/tutorial_grf) by  downloading the whole repository with all the tutorial [https://github.com/madina-k/DSE2021_tutorials](https://github.com/madina-k/DSE2021_tutorials)
 
 **Step 2.** Open R Studio and install the following packages for this week's tutorial:
 

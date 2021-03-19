@@ -52,4 +52,5 @@
 - part: Other
   chapters:
   - file: Textbooks_and_papers
+  - file: Lecture_slides
   # - file: statsvsml

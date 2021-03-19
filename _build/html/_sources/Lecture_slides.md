@@ -19,3 +19,4 @@ For your convenience, I put all the slides together in the [same repo with the t
 Here are the slides for Friday Q&A sessions:
 
 1. [Week 1](https://www.dropbox.com/s/nzwz34t9hzf2zcm/DSE_p2_zoom_week1.pdf?dl=0)
+2. [Week 2](https://www.dropbox.com/s/z2p0tzr76kux7x2/DSE_p2_zoom_week2.pdf?dl=0)

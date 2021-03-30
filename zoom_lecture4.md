@@ -6,7 +6,7 @@ Please, send me your questions regarding this week's material by Wednesday 1pm.
 
 1. Q&A session (10:45)
 3. Break (11:30)
-4. Testing for heterogeneity in treatment effects (11:45)
+4. Tutorial: code snippets to work with data in R (11:45)
 
 ## Zoom link
 
